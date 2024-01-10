@@ -31,11 +31,9 @@ public final class Sorting {
         int n1 = m - l + 1;
         int n2 = r - m;
 
-        /* create temp arrays */
         int left[] = new int[n1];
         int right[] = new int[n2];
 
-        /* Copy data to temp arrays left[] and right[] */
         for (i = 0; i < n1; i++) {
             left[i] = arr[l + i];
         }
@@ -75,8 +73,7 @@ public final class Sorting {
 
     public void mergeSort(int arr[], int l, int r) {
         if (l < r) {
-            // Same as (l+r)/2, but avoids overflow for
-            // large l and h
+            // Same as (l+r)/2, but avoids overflow for large l and h
             int m = l + (r - l) / 2;
 
             // Sort first and second halves
@@ -89,16 +86,14 @@ public final class Sorting {
 
     public void quickSort(int[] array, int low, int high) {
         if (array.length == 0)
-            return; //завершить выполнение если длина массива равна 0
+            return; 
 
         if (low >= high)
-            return; //завершить выполнение если уже нечего делить
+            return; 
 
-        // выбрать опорный элемент
         int middle = low + (high - low) / 2;
         int opora = array[middle];
 
-        // разделить на подмассивы, который больше и меньше опорного элемента
         int i = low;
         int j = high;
         while (i <= j) {
@@ -110,7 +105,7 @@ public final class Sorting {
                 j--;
             }
 
-            if (i <= j) { //меняем местами
+            if (i <= j) { 
                 int temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
@@ -119,7 +114,6 @@ public final class Sorting {
             }
         }
 
-        // вызов рекурсии для сортировки левой и правой части
         if (low < j)
             quickSort(array, low, j);
 
